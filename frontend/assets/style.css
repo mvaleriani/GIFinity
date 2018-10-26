@@ -131,6 +131,10 @@ body{
     z-index: 2;
     stroke-linecap: square;
 }
+#logo-symbol{
+    filter: drop-shadow(0 0 2px var(--secondary-dark));
+    margin-bottom: 5px;
+}
 #logo-after{
     position: absolute;
     stroke: var(--secondary-dark); 
