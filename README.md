@@ -1,6 +1,8 @@
 <p align="center"> 
 
   <a href="https://mvaleriani.github.io/GIFinity">
+    <img width='10%'
+    src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/symbol.png" >
   </a>
 
    <a href="https://mvaleriani.github.io/GIFinity">
@@ -22,7 +24,7 @@ Our goal with this project was to create a Convolutional Neural Network (CNN) ca
 
 <a name="links">
   <h2>
-    <img src="">
+    <img width="10px" src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/symbol.png">
       Linking Pleasures
   </h2>  
 </a>
@@ -31,7 +33,7 @@ Our goal with this project was to create a Convolutional Neural Network (CNN) ca
 
 <a name="technologies">
   <h2>
-    <img src="">
+    <img width="10px" src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/symbol.png">
       Technologies
   </h2>  
 </a>
@@ -43,7 +45,7 @@ Our goal with this project was to create a Convolutional Neural Network (CNN) ca
 
 <a name="main-feature">
   <h2>
-    <img src="">
+    <img width="10px" src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/symbol.png">
       Main Feature
   </h2>  
 </a>
