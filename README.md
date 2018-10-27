@@ -38,7 +38,7 @@ Our goal with this project was to create a Convolutional Neural Network (CNN) ca
 </a>
 
 |React|Redux|HTML5/CSS3/JavaScript|
-|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+|:-------------------------:|:-------------------------:|:-------------------------:|
 |<img src="https://raw.githubusercontent.com/MoistCode/Resources/master/Programming/ReadmeStructures/Shallow/images/react.png">| <img src=""/> |<img src="https://github.com/MoistCode/ImaginaryNumblr/blob/master/readme_gifs/Webp.net-resizeimage(4).png">|
 
 
