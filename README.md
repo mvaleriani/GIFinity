@@ -6,11 +6,6 @@
     <img width='35%' src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/newLogo.png">
   </a>
 
-  <a href="https://mvaleriani.github.io/GIFinity">
-    <img width='10%' margin="29px"
-    src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/symbol.png" >
-  </a>
-
   <p align="center"><i>"Infinite scrolling GIF viewer via the Giphy API"</i></p>
 </p>
 
