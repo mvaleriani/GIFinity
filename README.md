@@ -1,16 +1,10 @@
 <p align="center"> 
 
   <a href="https://mvaleriani.github.io/GIFinity">
-    <svg width="311" height="179" viewBox="0 0 311 179" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="89.4852" y="23.3345" width="93.5513" height="93.5513" transform="rotate(45 89.4852 23.3345)" stroke="#44C6BF" stroke-width="33"/>
-        <rect x="221.154" y="23.3345" width="93.5513" height="93.5513" transform="rotate(45 221.154 23.3345)" stroke="#44C6BF" stroke-width="33"/>
-        <rect x="155.419" y="130.77" width="33.9149" height="33.9149" transform="rotate(45 155.419 130.77)" fill="#FA96C8"/>
-        <rect x="155.651" width="33.9149" height="33.9149" transform="rotate(45 155.651 0)" fill="#FA96C8"/>
-    </svg>
   </a>
 
    <a href="https://mvaleriani.github.io/GIFinity">
-    <img width='50%' src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/newLogo.png">
+    <img width='35%' src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/newLogo.png">
   </a>
 
   <p align="center"><i>"Infinite scrolling GIF viewer via the Giphy API"</i></p>
