@@ -22,7 +22,7 @@ Our goal with this project was to create a Convolutional Neural Network (CNN) ca
 <a name="links">
   <h2>
     <img width="20px" src="https://raw.githubusercontent.com/mvaleriani/GIFinity/master/frontend/assets/symbol.png">
-      Linking Pleasures
+    Linking Pleasures
   </h2>  
 </a>
 
