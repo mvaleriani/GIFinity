@@ -11,7 +11,7 @@ class Content extends React.Component{
         super(props);
 
         this.state = {
-            currentTab: 'trendingGIFComps',
+            
         };
 
         this.compBucket = [];
@@ -21,10 +21,43 @@ class Content extends React.Component{
         // this.props.contentType
     }
 
-    componentWillReceiveProps(newProps){
+    componentWillReceiveProps(newProps){ 
         //New gifs received
         let currLength = this.compBucket.length;
         let newLength = newProps[`${this.props.contentType}GIFs`].length;
+
+        if (newLength === currLength && currLength !== 0 && this.props.contentType === 'search') {
+            if (newProps.searchGIFs[0].id !== this.props.searchGIFs[0].id) {
+                this.compBucket = [];
+                this.gifCols = [[], [], [], []];
+                this.contentContainer = (<div></div>);
+                this.forceUpdate()
+                for (let k = 0; k < currLength; k++) {
+                    let newGIFData = newProps[`${this.props.contentType}GIFs`][k];
+                    let newGIFComp = (<GIFComp key={k} gifData={newGIFData} />);
+                    this.compBucket.push(newGIFComp)
+                    this.gifCols[(k % newProps.numCols)].push(newGIFComp);
+                } 
+                this.contentContainer = (
+                    <main id='content'>
+                        <div id='content-col-1' className='content-col' style={{ gridColumn: 1 }}>
+                            {this.gifCols[0]}
+                        </div>
+                        <div id='content-col-2' className='content-col' style={{ gridColumn: 2 }}>
+                            {this.gifCols[1]}
+                        </div>
+                        <div id='content-col-3' className='content-col'>
+                            {this.gifCols[2]}
+                        </div>
+                        <div id='content-col-4' className='content-col'>
+                            {this.gifCols[3]}
+                        </div>
+                        {/* <LoaderAnim /> */}
+                    </main>
+                );
+                this.forceUpdate()
+            }
+        }
 
         // Device resize received
         if (newProps.numCols !== this.props.numCols && currLength !== 0) {
@@ -35,17 +68,9 @@ class Content extends React.Component{
                 let colIdx = (j % newProps.numCols);
                 this.gifCols[colIdx].push(oldGIFComp);
             }
-            // this.setState()
         }
 
-        // if (newProps.appTab !== this.props.appTab) {
-        //     this.setState({ currentTab: newProps.appTab})
-        // } else{
-        //     this.compBucket[newProps.appTab] = [];
-        //     this.gifCols[newProps.appTab] = [[], [], [], []];
-        //     currLength = 0;
-        // }
-
+        // Adding new gifs to compBucket
         if (newLength > currLength){
             for (let i = currLength; i < newLength; i++) {
                 let newGIFData = newProps[`${this.props.contentType}GIFs`][i];     
@@ -53,9 +78,9 @@ class Content extends React.Component{
                 this.compBucket.push(newGIFComp)
                 this.gifCols[(i % newProps.numCols)].push(newGIFComp);
             }
-            // this.setState()
-        }
+        } 
 
+    
         // show content when the new appTab is the same as this component's contentType
         if (this.props.contentType === newProps.appTab && newProps.appTab !== this.props.appTab) {
             this.contentContainer = (
@@ -81,15 +106,6 @@ class Content extends React.Component{
     }
 
     render(){
-        // let col1, col2, col3, col4;
-        // if (this.props.appTab) {
-        //     col1 = this.gifCols[this.props.appTab][0]
-        //     col2 = this.gifCols[this.props.appTab][1]
-        //     col3 = this.gifCols[this.props.appTab][2]
-        //     col4 = this.gifCols[this.props.appTab][3]            
-        // }
-        
-
         return (
             this.contentContainer
         );

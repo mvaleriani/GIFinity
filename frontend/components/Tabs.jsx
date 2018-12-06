@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setAppTab } from '../actions/uiActions'
-import { fetchSearchGIFS } from '../actions/gifActions'
+import { fetchSearchGIFS, clearSearchGIFS } from '../actions/gifActions'
 
 class Tabs extends React.Component {
     constructor(props) {
@@ -21,9 +21,10 @@ class Tabs extends React.Component {
     componentDidMount() {
         this.props.setAppTab('trending');
     }
+    
 
     handleKeyPress(e) {
-        // e.preventDefault();
+        // Handles a query underneath the search tab
         if (e.key === 'Enter') {
             e.preventDefault();
             this.props.fetchSearchGIFS(e.target.value);
@@ -57,13 +58,10 @@ class Tabs extends React.Component {
                 );
                 this.setState({ tabStyles: { trending: {}, fav: {}, search: { background: '#e06498' }, tabNav: {top: '130px'}} })
             }
-
         }
     }
 
     render() {
-        
-
         return (
             <div id='tab-nav' style={this.state.tabStyles.tabNav}>
                 <div id='trending' className='tab' style={this.state.tabStyles.trending} onClick={e => this.handleTabSwitch(e)}>
@@ -95,6 +93,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 const mapDispatchToProps = dispatch => ({
     setAppTab: appTab => dispatch(setAppTab(appTab)),
+    clearSearchGIFS: () => dispatch(clearSearchGIFS()),
     fetchSearchGIFS: searchStr => dispatch(fetchSearchGIFS(searchStr)),
 });
 

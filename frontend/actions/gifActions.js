@@ -19,6 +19,8 @@ export const addFav = gifData => {
     }
 };
 
+
+
 const receiveTrendingGIFs = trendingGIFs => ({
     type: RECEIVE_TRENDING_GIFS,
     trendingGIFs
@@ -33,6 +35,8 @@ const receiveFavGIFs = favGIFs => ({
     type: RECEIVE_FAV_GIFS,
     favGIFs
 });
+
+
 
 export const fetchTrendingGIFS = (num, offset) => dispatch => (
     APIUtil.fetchTrendingGIFs(num, offset).then(trendingGIFs => dispatch(receiveTrendingGIFs(trendingGIFs)))

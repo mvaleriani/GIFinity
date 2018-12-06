@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import Navbar from './Navbar'; 
 import Tabs from './Tabs'; 
-import Content from './Content/Content'; 
 import AbstractContent from './Content/AbstractContent'; 
 
 import { fetchTrendingGIFS, fetchSearchGIFS, fetchFavGIFS } from '../actions/gifActions';
@@ -97,7 +96,6 @@ class App extends React.Component {
       <div className="app" id='app' onScroll={ e => this.handleScroll(e) } >
         <Navbar />
         <Tabs />
-        {/* <Content /> */}
         <AbstractContent contentType='trending'/>
         <AbstractContent contentType='fav' />
         <AbstractContent contentType='search' />
