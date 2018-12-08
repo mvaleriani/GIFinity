@@ -11,7 +11,6 @@ class Content extends React.Component{
         super(props);
 
         this.state = {
-            
         };
 
         this.compBucket = [];
