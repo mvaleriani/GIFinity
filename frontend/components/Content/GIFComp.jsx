@@ -22,7 +22,6 @@ class GIFComp extends React.Component{
     }
 
     handleGIFClick(e){  
-        // debugger;    
         if (e.target.className === 'gif-prev') {
             this.setState({ componentOpen: true, heartStyle: this.state.heartStyle })
             window.addEventListener('resize', this.handleGIFCompResize)
