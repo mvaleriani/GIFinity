@@ -17,7 +17,6 @@ class Content extends React.Component{
         this.gifCols = [[],[],[],[]];
 
         this.contentContainer = (<div></div>);
-        // this.props.contentType
     }
 
     componentWillReceiveProps(newProps){ 
