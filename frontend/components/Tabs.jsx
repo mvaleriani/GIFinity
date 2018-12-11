@@ -82,8 +82,6 @@ class Tabs extends React.Component {
     }
 }
 
-// export default Tabs;
-
 const mapStateToProps = (state, ownProps) => {
     let appTab;
     if (state.ui.appTab) {
