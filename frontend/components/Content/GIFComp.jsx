@@ -69,10 +69,10 @@ class GIFComp extends React.Component{
             }
             
             gifShow = (
-                <div className="gif-show" style={{ height: `${largeGIFHeight + 150}px`, maxHeight: 'fit-content'}}>
-                    <img className="gif-large" src={this.props.gifData.images['original'].url} alt="" style={{ maxWidth: `${this.props.gifData.images['original'].width}px`, maxHeight: this.props.gifData.images['original'].height, width:'100%'}} />
+                <div className="gif-show" style={{ height: `${largeGIFHeight + 150}px`, maxHeight: 'calc(100% - 100px)'}}>
+                    <img className="gif-large" src={this.props.gifData.images['original'].url} alt="" style={{ maxWidth: '100%', maxHeight: '100%', width:'100%'}} />
                     
-                    <div className='gif-info' style={{ height: 'fit-content', width: '100%', maxWidth: `${this.props.gifData.images['original'].width}px`}}>
+                    <div className='gif-info' style={{ height: 'fit-content', width: '100%', maxWidth: `100%`}}>
                         <a href={this.props.gifData.url} target="_blank" style={{ textDecoration: 'none', width: 'fit-content', maxWidth: '90%' }}><span className='gif-title'>
                             {title}
                         </span></a>

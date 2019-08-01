@@ -4146,7 +4146,7 @@ module.exports = isTypedArray;
 /***/ (function(module, exports) {
 
 /**
- * Gets the value at `key`, unless `key` is "__proto__".
+ * Gets the value at `key`, unless `key` is "__proto__" or "constructor".
  *
  * @private
  * @param {Object} object The object to query.
@@ -4154,6 +4154,10 @@ module.exports = isTypedArray;
  * @returns {*} Returns the property value.
  */
 function safeGet(object, key) {
+  if (key === 'constructor' && typeof object[key] === 'function') {
+    return;
+  }
+
   if (key == '__proto__') {
     return;
   }
@@ -30731,8 +30735,6 @@ var Tabs = function (_React$Component) {
     return Tabs;
 }(_react2.default.Component);
 
-// export default Tabs;
-
 var mapStateToProps = function mapStateToProps(state, ownProps) {
     var appTab = void 0;
     if (state.ui.appTab) {
@@ -30842,7 +30844,6 @@ var Content = function (_React$Component) {
         _this.gifCols = [[], [], [], []];
 
         _this.contentContainer = _react2.default.createElement('div', null);
-        // this.props.contentType
         return _this;
     }
 
@@ -31066,7 +31067,6 @@ var GIFComp = function (_React$Component) {
     _createClass(GIFComp, [{
         key: 'handleGIFClick',
         value: function handleGIFClick(e) {
-            // debugger;    
             if (e.target.className === 'gif-prev') {
                 this.setState({ componentOpen: true, heartStyle: this.state.heartStyle });
                 window.addEventListener('resize', this.handleGIFCompResize);
@@ -31120,11 +31120,11 @@ var GIFComp = function (_React$Component) {
 
                 gifShow = _react2.default.createElement(
                     'div',
-                    { className: 'gif-show', style: { height: largeGIFHeight + 150 + 'px', maxHeight: 'fit-content' } },
-                    _react2.default.createElement('img', { className: 'gif-large', src: this.props.gifData.images['original'].url, alt: '', style: { maxWidth: this.props.gifData.images['original'].width + 'px', maxHeight: this.props.gifData.images['original'].height, width: '100%' } }),
+                    { className: 'gif-show', style: { height: largeGIFHeight + 150 + 'px', maxHeight: 'calc(100% - 100px)' } },
+                    _react2.default.createElement('img', { className: 'gif-large', src: this.props.gifData.images['original'].url, alt: '', style: { maxWidth: '100%', maxHeight: '100%', width: '100%' } }),
                     _react2.default.createElement(
                         'div',
-                        { className: 'gif-info', style: { height: 'fit-content', width: '100%', maxWidth: this.props.gifData.images['original'].width + 'px' } },
+                        { className: 'gif-info', style: { height: 'fit-content', width: '100%', maxWidth: '100%' } },
                         _react2.default.createElement(
                             'a',
                             { href: this.props.gifData.url, target: '_blank', style: { textDecoration: 'none', width: 'fit-content', maxWidth: '90%' } },
@@ -32022,8 +32022,8 @@ function baseMerge(object, source, srcIndex, customizer, stack) {
     return;
   }
   baseFor(source, function(srcValue, key) {
+    stack || (stack = new Stack);
     if (isObject(srcValue)) {
-      stack || (stack = new Stack);
       baseMergeDeep(object, source, key, srcIndex, baseMerge, customizer, stack);
     }
     else {
